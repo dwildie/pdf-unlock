@@ -23,8 +23,8 @@ public class PDFUnlock {
         }
 
         File dst = new File(args[1]);
-        if (!dst.getParentFile().exists()) {
-            System.out.printf("Output directory %s does not exist\n", dst.getParentFile().getPath());
+        if (!dst.getAbsoluteFile().getParentFile().exists()) {
+            System.out.printf("Output directory %s does not exist\n", dst.getPath());
             return;
         }
 
@@ -32,6 +32,6 @@ public class PDFUnlock {
     }
 
     protected static void usage() {
-        System.out.println("Usage: java -jar pdf-unlock-1.0.jar <locked.pdf> <unlocked.pdf>");
+        System.out.println("Usage: java -jar pdf-unlock-1.1.jar <locked.pdf> <unlocked.pdf>");
     }
 }
